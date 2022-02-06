@@ -1,0 +1,178 @@
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  outline: none;
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+:root {
+  --blue-gradiant: linear-gradient(#1c2c4c, #16284b);
+  --white: #f5f9fa;
+}
+html{
+  font-size: 62.5%;
+}
+hr{
+  background: var(--blue-gradiant);
+  height: 0.2em;
+  border: none;
+}
+body{
+  background: #f5f9fa;
+}
+
+/*-------------------------------------------------------------------------------------MENU Y FONDO DE INICIO*/
+.top-menu{
+  width: 3rem;
+  height: 3rem;
+  position: fixed;
+  top: 5rem;
+  right: 5rem;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  cursor: pointer;
+  transition: right 0.8s;
+}
+
+.change .top-menu{
+  right: 34rem;
+}
+.line {
+  border-radius: 2rem;
+  width: 100%;
+  height: 0.25rem;
+  background-color: #1c2c4c;
+  box-shadow: 0.01rem 0.2rem rgba(0,0,0,0.2);
+}
+.change .line{
+  background-color: rgba(0,0,0,0.8 );
+}
+.change .line-1{
+  transform: rotate(45deg)
+  translate(0.3rem,0.8rem);
+}
+.change .line-2{
+  opacity: 0;
+  visibility: hidden;
+}
+.change .line-3{
+  transform: rotate(-45deg)
+  translate(0.3rem,-0.8rem);
+}
+.change .top-menu:hover span {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebar{
+  width: 42rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -42rem;
+  background-color: var(--white);
+  border-radius: 3rem 0 0 3rem;
+  transition: right 0.6s;
+  z-index: 100;
+  /* box-shadow: 0rem 0rem 2rem #1c2c4c; */
+}
+.change .sidebar {
+right: 0;
+}
+.menu{
+  position: absolute;
+  top:40%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.menu-item{
+  text-align: center;
+}
+.menu-link{
+  font-size: 4.5rem;
+  color: black;
+  position: relative;
+}
+.menu-link::before{
+  content: attr(data-content);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #36bed9;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: width 0.3s ease-in-out;
+}
+.menu-link:hover::before{
+  width: 100%;
+}
+
+
+
+/*-------------------------------------------------------------------------------------RESPONSIVE*/
+
+@media (max-width: 500px) {
+  html {
+    font-size: 45%;
+  }
+  .sidebar {
+    width: 100%;
+    right: -100%;
+  }
+  .change .hamburger-menu {
+    right: 38rem;
+  }
+}
+@media (max-width: 300px) {
+  .banner button{
+      width: 15rem;
+      height: 7rem;
+      font-size: 1.5rem;
+  }
+}
+.Flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4em;
+}
+.btn-azul{
+  background-color: #1c2c4c;
+  color: white;
+}
+
+.btn-azul:hover{
+  background-color: #14203a;
+  color: white;
+}
+.btn{
+  margin: 0 0.5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
